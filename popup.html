@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>BMET Toolkit</title>
+    <style>
+        body {
+            width: 400px;
+            min-height: 550px;
+        }
+        
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 p-4 custom-scroll">
+    <div class="flex justify-between items-center mb-4">
+        <h1 class="text-xl font-bold text-blue-800">BMET Toolkit 🛠️</h1>
+        <button id="openOptions" class="text-xs bg-slate-200 px-2 py-1 rounded" style="background:#e2e8f0">Settings</button>
+    </div>
+
+    <div class="mb-4 p-3 bg-white rounded shadow-sm border-slate-200">
+        <label style="font-size: 0.7rem; font-weight: bold; color: #64748b; text-transform: uppercase;">Quick Converter</label>
+        <div class="flex gap-2 mb-2">
+            <input id="convInput" type="number" placeholder="Val" style="width: 70px;">
+            <select id="convType" class="flex-1">
+                <option value="psiToBar">PSI ➔ Bar</option>
+                <option value="barToPsi">Bar ➔ PSI</option>
+                <option value="cToF">°C ➔ °F</option>
+                <option value="fToC">°F ➔ °C</option>
+            </select>
+        </div>
+        <div id="convResult" class="text-center font-bold bg-blue-50 p-1 rounded" style="color: #1d4ed8; border: 1px solid #dbeafe; font-size: 0.8rem;">Result: --</div>
+    </div>
+
+    <div class="mb-4">
+        <select id="equipSelect" class="w-full">
+            <option value="">-- Select Device for PM --</option>
+        </select>
+    </div>
+
+    <div id="checklistArea" class="hidden bg-white p-4 rounded shadow-sm mb-4" style="border: 1px solid #bfdbfe;">
+        <h3 class="font-bold mb-2 text-blue-800" style="font-size: 0.9rem;">PM Checklist</h3>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; margin-bottom: 10px;">
+            <label class="flex justify-between">Physical Inspection <input type="checkbox" id="chkPhysical"></label>
+            <label class="flex justify-between">Battery Check <input type="checkbox" id="chkBattery"></label>
+            <label class="flex justify-between">Electrical Safety <input type="checkbox" id="chkSafety"></label>
+            <label class="flex justify-between">Next Due <input type="date" id="dueDate"></label>
+        </div>
+        <textarea id="pmNotes" class="w-full mb-2" placeholder="S/N or notes..." style="height: 50px; font-size: 0.75rem;"></textarea>
+        <button id="savePM" class="w-full bg-green-600 text-white p-2 rounded font-bold">Log Complete PM</button>
+    </div>
+
+    <div class="mb-4">
+        <label style="font-size: 0.7rem; font-weight: bold; color: #64748b; text-transform: uppercase;">Field Notes (Auto-saves)</label>
+        <textarea id="scratchpad" class="w-full bg-yellow-50" style="height: 60px; border: 1px inset #e2e8f0; font-size: 0.75rem;" placeholder="Temporary notes..."></textarea>
+    </div>
+
+    <button id="exportCsv" class="w-full border-slate-200 text-blue-800 p-2 rounded text-xs font-bold" style="border: 1px solid #1e40af;">Export Daily CSV Report</button>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
