@@ -85,3 +85,31 @@ In a healthcare environment, data privacy is paramount. BMET Toolkit is built on
 1. **Clone the Repo**
    ```bash
    git clone [https://github.com/yourusername/BMET-Chrome-Extension.git](https://github.com/yourusername/BMET-Chrome-Extension.git)
+
+---
+Open Chrome Extensions
+Navigate to chrome://extensions/ in your browser.
+
+Enable Developer Mode
+Toggle the switch in the top right corner.
+
+Load Unpacked
+Click "Load unpacked" and select the project folder.
+---
+🤝 Contributing
+Contributions make the BMET community stronger!
+
+Fork the Project
+
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+
+Push to the Branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+---
+<p align="center">
+Built for BMETs, by a BMET. 🛠️
+</p>
